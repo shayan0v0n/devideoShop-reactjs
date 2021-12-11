@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.even-card-number {
+    background: $primary_color !important;
+    color: white;
+    transition: .5s;
+    cursor: pointer;
+        &:hover {
+            background: $third_color !important;
+        }
+}
+
+.odd-card-number {
+    background: $secondary_color !important;
+    color: white;
+    transition: .5s;
+    cursor: pointer;
+        &:hover {
+            background: $third_color !important;
+        }
+}

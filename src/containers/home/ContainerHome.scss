@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.section-one {
+    background-color: $secondary_color;
+    color: white;
+        p {
+            font-size: 18px;
+        }
+}
+
+.section-two {
+    background-color: $secondary_color;
+    color: white;
+        p {
+            font-size: 18px;
+        }
+}

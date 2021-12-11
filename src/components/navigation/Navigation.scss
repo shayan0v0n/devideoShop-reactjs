@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.bg-navbar-dropdown .dropdown-menu {
+    background-color: $secondary_color;
+    text-align: right;
+        a {
+            color: white;
+            margin: auto;
+            transition: .5s;
+                &:hover {
+                    background-color: $third_color;
+                    color: white;
+                }
+        }
+}
+
+.bg-navbar {
+    background-color: $fourth_color;
+}
