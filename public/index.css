@@ -6,3 +6,7 @@
 body {
     font-family: 'vazir' !important;
 }
+
+i {
+    cursor: pointer;
+}

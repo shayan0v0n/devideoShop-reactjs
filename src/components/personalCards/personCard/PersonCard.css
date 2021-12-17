@@ -1,0 +1,10 @@
+.personal-card-custom,
+.personal-card-custom.card-footer {
+  background-color: #892cdc;
+  color: white;
+}
+
+.card-body-custom:hover {
+  border: 1px solid #520578;
+}
+/*# sourceMappingURL=PersonCard.css.map */

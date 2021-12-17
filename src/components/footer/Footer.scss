@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+
+.footer-custom {
+    background-color: $third_color;
+    border-top: 2px solid $fourth_color;
+    border-bottom: 2px solid $fourth_color;
+    color: white;
+        h4 {
+            font-size: 1.25rem;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+}
+
+.sub-footer-custom {
+    background-color: $fourth_color;
+    
+        p {
+            font-size: 15px;
+            color: white;
+        }
+}

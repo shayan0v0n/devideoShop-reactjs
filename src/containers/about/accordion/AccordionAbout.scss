@@ -1,0 +1,21 @@
+@import '../../../styles/variables';
+
+.accordionItem-custom .accordion-button {
+    background-color: $primary_color;
+    color: white;
+}
+
+.accordionItem-custom .accordion-button::after {
+    display: none;
+}
+
+.accordionItem-custom .accordion-button:focus, .accordionItem-custom .accordion-button:not(.collapsed) {
+    color: white;
+    background-color: $third_color;
+    box-shadow: none;
+}
+
+.accordionBody-custom {
+    background-color: $third_color;
+    color:white;
+}

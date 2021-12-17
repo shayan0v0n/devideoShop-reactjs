@@ -1,0 +1,28 @@
+.evenCard {
+  background-color: #bc6ff1 !important;
+  color: white !important;
+  -webkit-transition: .7s;
+  transition: .7s;
+}
+
+.evenCard:hover {
+  background-color: #520578 !important;
+  cursor: pointer;
+}
+
+.oddCard {
+  background-color: #892cdc !important;
+  color: white !important;
+  -webkit-transition: .7s;
+  transition: .7s;
+}
+
+.oddCard:hover {
+  background-color: #520578 !important;
+  cursor: pointer;
+}
+
+.my-carousel .carousel-control-next, .my-carousel .carousel-control-prev {
+  display: none;
+}
+/*# sourceMappingURL=CarouselAbout.css.map */

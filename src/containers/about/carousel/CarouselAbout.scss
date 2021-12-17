@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.evenCard {
+    background-color: $primary_color !important;
+    color: white !important;
+    transition: .7s;
+        &:hover {
+            background-color: $third_color !important;
+            cursor: pointer;
+        }
+}
+
+.oddCard {
+    background-color: $secondary_color !important;
+    color: white !important;
+    transition: .7s;
+        &:hover {
+            background-color: $third_color !important;
+            cursor: pointer;
+        }
+}
+
+.my-carousel .carousel-control-next, .my-carousel .carousel-control-prev {
+    display: none;
+}

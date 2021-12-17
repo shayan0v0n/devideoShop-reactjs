@@ -1,0 +1,21 @@
+.accordionItem-custom .accordion-button {
+  background-color: #bc6ff1;
+  color: white;
+}
+
+.accordionItem-custom .accordion-button::after {
+  display: none;
+}
+
+.accordionItem-custom .accordion-button:focus, .accordionItem-custom .accordion-button:not(.collapsed) {
+  color: white;
+  background-color: #520578;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.accordionBody-custom {
+  background-color: #520578;
+  color: white;
+}
+/*# sourceMappingURL=AccordionAbout.css.map */

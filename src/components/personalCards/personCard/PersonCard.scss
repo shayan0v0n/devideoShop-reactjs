@@ -1,0 +1,11 @@
+@import '../../../styles/variables';
+
+.personal-card-custom,
+.personal-card-custom.card-footer {
+    background-color: $secondary_color;
+    color: white;
+}
+
+.card-body-custom:hover {
+    border: 1px solid $third_color
+}

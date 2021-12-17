@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,qBAAqB;AACrB,qBAAqB,AAAA,YAAY,CAAC;EAC9B,gBAAgB,ECHF,OAAO;EDIrB,KAAK,EAAE,KAAK;CACf;;AAED,AAAA,iBAAiB,AAAA,MAAM,CAAC;EACpB,MAAM,EAAE,GAAG,CAAC,KAAK,CCPP,OAAO;CDQpB",
+    "sources": [
+        "PersonCard.scss",
+        "../../../styles/_variables.scss"
+    ],
+    "names": [],
+    "file": "PersonCard.css"
+}
