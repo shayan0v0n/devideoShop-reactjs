@@ -23,7 +23,9 @@ const Navigation = () => {
                                 <NavDropdown.Item className="">آموزش PHP</NavDropdown.Item>
                                 <NavDropdown.Item className="">آموزش Laravel</NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link>مقالات</Nav.Link>
+                            <LinkContainer to="/blog">
+                                <Nav.Link>مقالات</Nav.Link>
+                            </LinkContainer>
                             <Nav.Link>مدرسین</Nav.Link>
                             <LinkContainer to="/about">
                                 <Nav.Link>درباره ما</Nav.Link>

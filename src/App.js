@@ -5,6 +5,8 @@ import Navigation from './components/navigation/Navigation'
 import Footer from './components/footer/Footer'
 import Home from './containers/home/Home';
 import About from './containers/about/About'
+import Blog from './containers/blog/Blog'
+import Post from './containers/post/Post';
 
 const App = () => {
     return (
@@ -13,6 +15,8 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:id" element={<Post />} />
             </Routes>
             <Footer />
         </div>
