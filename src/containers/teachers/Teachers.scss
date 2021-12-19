@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+
+.section-custom1 {
+    background-color: $secondary_color;
+    color: white;
+        p {
+            font-size: 18px;
+        }
+}

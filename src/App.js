@@ -7,6 +7,7 @@ import Home from './containers/home/Home';
 import About from './containers/about/About'
 import Blog from './containers/blog/Blog'
 import Post from './containers/post/Post';
+import Teachers from './containers/teachers/Teachers';
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:id" element={<Post />} />
+                <Route path="/teachers" element={<Teachers />} />
             </Routes>
             <Footer />
         </div>

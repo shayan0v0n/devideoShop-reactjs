@@ -26,7 +26,9 @@ const Navigation = () => {
                             <LinkContainer to="/blog">
                                 <Nav.Link>مقالات</Nav.Link>
                             </LinkContainer>
-                            <Nav.Link>مدرسین</Nav.Link>
+                            <LinkContainer to="/teachers">
+                                <Nav.Link>مدرسین</Nav.Link>
+                            </LinkContainer>
                             <LinkContainer to="/about">
                                 <Nav.Link>درباره ما</Nav.Link>
                             </LinkContainer>
