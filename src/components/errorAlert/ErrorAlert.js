@@ -5,7 +5,7 @@ const ErrorAlert = () => {
     return (
         <Container>
             <Alert variant='danger' className="m-auto my-3" dir="rtl">
-                <span>قطعی اینترنت، یک بار دیگر امتخان کنید...</span>
+                <span>قطعی اینترنت، یک بار دیگر امتحان کنید...</span>
             </Alert>
         </Container>
     )

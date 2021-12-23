@@ -8,6 +8,10 @@ import About from './containers/about/About'
 import Blog from './containers/blog/Blog'
 import Post from './containers/post/Post';
 import Teachers from './containers/teachers/Teachers';
+import PhpCourse from './containers/coursePages/phpCourse/PhpCourse';
+import LaravelCourse from './containers/coursePages/laravelCourse/LaravelCourse';
+import ReactjsCourse from './containers/coursePages/reactjsCourse/ReactjsCourse';
+import JavascriptCourse from './containers/coursePages/javascriptCourse/JavascriptCourse';
 
 const App = () => {
     return (
@@ -19,6 +23,10 @@ const App = () => {
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:id" element={<Post />} />
                 <Route path="/teachers" element={<Teachers />} />
+                <Route path="/skills/php" element={<PhpCourse />} />
+                <Route path="/skills/laravel" element={<LaravelCourse />} />
+                <Route path="/skills/reactjs" element={<ReactjsCourse />} />
+                <Route path="/skills/javascript" element={<JavascriptCourse />} />
             </Routes>
             <Footer />
         </div>

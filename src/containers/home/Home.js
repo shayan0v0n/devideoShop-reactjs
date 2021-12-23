@@ -30,24 +30,28 @@ const Home = () => {
                             <CourseCards
                              classNameType="even-card-number"
                              cardTitle="PHP"
+                             courseRoutePath="/skills/php"
                              courseStep="5" />
                         </Col>
                         <Col sm={12} md={6} xl={3}>
                         <CourseCards
                              classNameType="odd-card-number"
                              cardTitle="Laravel"
+                             courseRoutePath="/skills/laravel"
                              courseStep="2" />
                         </Col>
                         <Col sm={12} md={6} xl={3}>
                         <CourseCards
                              classNameType="even-card-number"
                              cardTitle="Reactjs"
+                             courseRoutePath="/skills/reactjs"
                              courseStep="3" />
                         </Col>
                         <Col sm={12} md={6} xl={3}>
                         <CourseCards
                              classNameType="odd-card-number"
                              cardTitle="Javascript"
+                             courseRoutePath="/skills/javascript"
                              courseStep="5" />
                         </Col>
                     </Row>

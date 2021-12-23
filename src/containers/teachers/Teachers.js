@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Container, Image, Card } from 'react-bootstrap'
 import './Teachers.scss';
+import PersonalCards from '../../components/personalCards/PersonalCards'
 
 const Teachers = () => {
     return (
@@ -21,40 +22,7 @@ const Teachers = () => {
                 </Container>
             </section>
             <section className="my-3">
-                <Container>
-                    <Row>
-                        <Col sm={12} md={4}>
-                            <Card className="text-center">
-                                <Card.Body>
-                                    <Card.Title><Image src={'./assets/img/Johnni Barnett.jpg'} fluid className="w-25 rounded-circle" /></Card.Title>
-                                    <Card.Title className="my-2">Johnni Barnett</Card.Title>
-                                    <Card.Subtitle>Backend Developer</Card.Subtitle>
-                                    <Card.Text>Built with compatibility in mind, we embrace our bootstrap core and strive to be compatible with the world's largest UI ecosystem</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col sm={12} md={4}>
-                            <Card className="text-center">
-                                <Card.Body>
-                                    <Card.Title><Image src={'./assets/img/me.jpg'} fluid className="w-25 rounded-circle" /></Card.Title>
-                                    <Card.Title className="my-2">Shayan Vosoughi</Card.Title>
-                                    <Card.Subtitle>Frontend Developer</Card.Subtitle>
-                                    <Card.Text>Built with compatibility in mind, we embrace our bootstrap core and strive to be compatible with the world's largest UI ecosystem</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col sm={12} md={4}>
-                            <Card className="text-center">
-                                <Card.Body>
-                                    <Card.Title><Image src={'./assets/img/Jim Steeves.jpg'} fluid className="w-25 rounded-circle" /></Card.Title>
-                                    <Card.Title className="my-2">Jim Steeves</Card.Title>
-                                    <Card.Subtitle>UI / UX Designer</Card.Subtitle>
-                                    <Card.Text>Built with compatibility in mind, we embrace our bootstrap core and strive to be compatible with the world's largest UI ecosystem</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-                </Container>
+                <PersonalCards />
             </section>
             <section  className="py-3 d-flex text-align-center section-custom1">
                 <Container>

@@ -18,10 +18,18 @@ const Navigation = () => {
                                 <Nav.Link>صفحه اصلی</Nav.Link>
                             </LinkContainer>
                             <NavDropdown title="دوره آموزشی" dir="rtl" className="navbar-dropdown bg-navbar-dropdown">
-                                <NavDropdown.Item className="">آموزش Javascript</NavDropdown.Item>
-                                <NavDropdown.Item className="">آموزش Reactjs</NavDropdown.Item>
-                                <NavDropdown.Item className="">آموزش PHP</NavDropdown.Item>
-                                <NavDropdown.Item className="">آموزش Laravel</NavDropdown.Item>
+                                <LinkContainer to="/skills/php">
+                                    <NavDropdown.Item>آموزش PHP</NavDropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to="/skills/laravel">
+                                    <NavDropdown.Item>آموزش Laravel</NavDropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to="/skills/javascript">
+                                    <NavDropdown.Item>آموزش Javascript</NavDropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to="/skills/reactjs">
+                                    <NavDropdown.Item>آموزش Reactjs</NavDropdown.Item>
+                                </LinkContainer>
                             </NavDropdown>
                             <LinkContainer to="/blog">
                                 <Nav.Link>مقالات</Nav.Link>
