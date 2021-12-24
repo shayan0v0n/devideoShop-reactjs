@@ -38,14 +38,14 @@ const Home = () => {
                              classNameType="odd-card-number"
                              cardTitle="Laravel"
                              courseRoutePath="/skills/laravel"
-                             courseStep="2" />
+                             courseStep="3" />
                         </Col>
                         <Col sm={12} md={6} xl={3}>
                         <CourseCards
                              classNameType="even-card-number"
                              cardTitle="Reactjs"
                              courseRoutePath="/skills/reactjs"
-                             courseStep="3" />
+                             courseStep="4" />
                         </Col>
                         <Col sm={12} md={6} xl={3}>
                         <CourseCards
