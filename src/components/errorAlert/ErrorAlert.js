@@ -1,11 +1,11 @@
 import React from 'react'
 import { Alert, Container } from 'react-bootstrap'
 
-const ErrorAlert = () => {
+const ErrorAlert = props => {
     return (
         <Container>
             <Alert variant='danger' className="m-auto my-3" dir="rtl">
-                <span>قطعی اینترنت، یک بار دیگر امتحان کنید...</span>
+                <span>{props.children}</span>
             </Alert>
         </Container>
     )

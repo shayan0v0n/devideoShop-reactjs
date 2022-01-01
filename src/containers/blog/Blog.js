@@ -24,7 +24,7 @@ const Blog = () => {
     if (blogDataList.loading) {
         blogDataDOM = (<SpinnerLoading />)
     }else if (!blogDataList.loading && blogDataList.error) {
-        blogDataDOM = (<ErrorAlert />)
+        blogDataDOM = (<ErrorAlert>قطعی اینترنت، یک بار دیگر امتحان کنید...</ErrorAlert>)
     }else {
         blogDataDOM = (
             <Container>

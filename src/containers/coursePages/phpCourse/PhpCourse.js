@@ -1,9 +1,44 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './PhpCourse.scss'
 import { Container, Row, Col, Image } from 'react-bootstrap'
 import CoursesCard from '../../../components/coursesCard/CoursesCard';
+import { useDispatch, useSelector } from 'react-redux'
+import { coursesAction } from '../../../actions/courses-action'
+import ErrorAlert from '../../../components/errorAlert/ErrorAlert';
+import SpinnerLoading from '../../../components/spinnerLoading/SpinnerLoading';
 
 const PhpCourse = () => {
+    const dispatch = useDispatch();
+    const coursesData = useSelector(state => state.courseDatas)
+    useEffect(() => {
+        dispatch(coursesAction())
+    }, [dispatch])
+    
+    let phpCourseDOM = null;
+    if (coursesData.error) {
+        phpCourseDOM = (
+            <ErrorAlert>
+                لطفا فیلترشکن خود را روشن کنید...
+            </ErrorAlert>
+        )
+    }else if (coursesData.courses[2]) {
+        phpCourseDOM = (
+            coursesData.courses[2].map(item => (
+                <Col sm={12} md={4} xl={3}>
+                    <CoursesCard 
+                        cardTitle={item.cardTitle}
+                        cardText={item.cardText}
+                        cardPrice={item.cardPrice}
+                        cardSrc={`/assets/img/php-course-${item.cardID}.webp`} />
+                </Col>
+            ))
+        )
+    }else {
+        phpCourseDOM = (
+            <SpinnerLoading />
+        )
+    }
+
     return (
         <main>
             <section className="py-3 d-flex align-item-center section-one">
@@ -24,41 +59,7 @@ const PhpCourse = () => {
             <section className="py-3" dir="rtl">
                 <Container>
                     <Row className="g-3">
-                        <Col sm={12} md={3}>
-                            <CoursesCard
-                            cardPrice="100,000"
-                            cardSrc="/assets/img/php-course-1.webp"
-                            cardTitle="آموزش PHP"
-                            cardText="در دوره آموزش PHP ما سعی می‌کنیم PHP را به شکل جامع و کاملا رایگان به شما آموزش دهیم تا با استفاده از PHP بتوانید سایت‌های خود را بسازید." />
-                        </Col>
-                        <Col sm={12} md={3}>
-                            <CoursesCard
-                            cardPrice="200,000"
-                            cardSrc="/assets/img/php-course-2.webp"
-                            cardTitle="آموزش MySQL"
-                            cardText="در دوره آموزش MySQL به شکل کامل از سطح مقدماتی تا پیشرفته کار با پایگاه داده MySQL را به شما آموزش می‌دهیم تا شما بتوانید به سادگی با آن کار کنید." />
-                        </Col>
-                        <Col sm={12} md={3}>
-                            <CoursesCard
-                            cardPrice="19,000"
-                            cardSrc="/assets/img/php-course-3.webp"
-                            cardTitle="آموزش php 7"
-                            cardText="چند مدتی از ارائه نسخه پایدار php ۷ میگذره . برای همین تصمیم گرفتم تا یک دوره آموزشی ویدیویی از ویژگی های جدید این نسخه php رو براتون آماده کنم . " />
-                        </Col>
-                        <Col sm={12} md={3}>
-                            <CoursesCard
-                            cardPrice="190,000"
-                            cardSrc="/assets/img/php-course-4.webp"
-                            cardTitle="آموزش شئ‌گرایی در PHP"
-                            cardText="در طول دوره آموزش شئ‌گرایی PHP ما سعی می‌کنیم، شما را با مفاهیم مربوط به شئ‌گرایی در زبان PHP به شکل کامل و پروژه محور آشنا کنیم." />
-                        </Col>
-                        <Col sm={12} md={3}>
-                            <CoursesCard
-                            cardPrice="89,000"
-                            cardSrc="/assets/img/php-course-5.webp"
-                            cardTitle="آموزش PHP8"
-                            cardText="در دوره آموزش PHP8 سعی کرده‌ایم شما را با تغییرات و ویژگی‌های جدید PHP8 به شکل کامل و کاربردی آشنا کنیم تا بتوانید در پروژهای خود از PHP8 استفاده کنید" />
-                        </Col>
+                        {phpCourseDOM}
                     </Row>
                 </Container>
             </section>

@@ -1,9 +1,44 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './LaravelCourse.scss'
 import { Container, Row, Col, Image } from 'react-bootstrap'
 import CoursesCard from '../../../components/coursesCard/CoursesCard';
+import { useDispatch, useSelector } from 'react-redux'
+import { coursesAction } from '../../../actions/courses-action'
+import ErrorAlert from '../../../components/errorAlert/ErrorAlert';
+import SpinnerLoading from '../../../components/spinnerLoading/SpinnerLoading';
 
 const LaravelCourse = () => {
+    const dispatch = useDispatch();
+    const coursesData = useSelector(state => state.courseDatas)
+    useEffect(() => {
+        dispatch(coursesAction())
+    }, [dispatch])
+    
+    let laravelCourseDOM = null;
+    if (coursesData.error) {
+        laravelCourseDOM = (
+            <ErrorAlert>
+                لطفا فیلترشکن خود را روشن کنید...
+            </ErrorAlert>
+        )
+    }else if (coursesData.courses[3]) {
+        laravelCourseDOM = (
+            coursesData.courses[3].map(item => (
+                <Col sm={12} md={4} xl={3}>
+                    <CoursesCard 
+                        cardTitle={item.cardTitle}
+                        cardText={item.cardText}
+                        cardPrice={item.cardPrice}
+                        cardSrc={`/assets/img/laravel-course-${item.cardID}.webp`} />
+                </Col>
+            ))
+        )
+    }else {
+        laravelCourseDOM = (
+            <SpinnerLoading />
+        )
+    }
+
     return (
         <main>
             <section className="py-3 d-flex align-item-center section-one">
@@ -24,27 +59,7 @@ const LaravelCourse = () => {
             <section className="py-3" dir="rtl">
                 <Container>
                     <Row className="g-3">
-                        <Col sm={12} md={4}>
-                            <CoursesCard
-                            cardPrice="100,000"
-                            cardSrc="/assets/img/laravel-course-1.webp"
-                            cardTitle="آموزش لاراول"
-                            cardText="فریمورک لاراول یکی از محبوب‌ترین و بهترین فریمورک‌های حال حاضر برای زبان PHP است، آموزش لاراول راکت می‌تواند به شکل رایگان به شما لاراول را آموزش دهد." />
-                        </Col>
-                        <Col sm={12} md={4}>
-                            <CoursesCard
-                            cardPrice="59,000"
-                            cardSrc="/assets/img/laravel-course-2.webp"
-                            cardTitle="آشنایی با امکانات جدید لاراول 7"
-                            cardText="در دوره آشنایی با امکانات لاراول ۷ ما سعی می‌کنیم شما را با امکاناتی که در لاراول ۷ اضافه شده به شکل کامل به شکل رایگان آشنا کنیم" />
-                        </Col>
-                        <Col sm={12} md={4}>
-                            <CoursesCard
-                            cardPrice="29,000"
-                            cardSrc="/assets/img/laravel-course-3.webp"
-                            cardTitle="آشنایی با امکانات جدید لاراول 8"
-                            cardText="لاراول ۸ با تغییرات جدیدی ارائه شده که ما در دوره آشنایی با امکانات لاراول ۸ سعی داریم شما را با این امکانات جدید به شکل کامل آشنا کنیم" />
-                        </Col>
+                        {laravelCourseDOM}
                     </Row>
                 </Container>
             </section>

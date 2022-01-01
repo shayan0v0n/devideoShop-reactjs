@@ -20,7 +20,7 @@ const Post = () => {
     if (singlePostBlogData.loading) {
         singlePostDOM = (<SpinnerLoading />)
     }else if(!singlePostBlogData.loading && singlePostBlogData.error) {
-        singlePostDOM = (<ErrorAlert />)
+        singlePostDOM = (<ErrorAlert>قطعی اینترنت، یک بار دیگر امتحان کنید...</ErrorAlert>)
     }else if (singlePostBlogData.singlePost) {
         singlePostDOM = (
             <Container>

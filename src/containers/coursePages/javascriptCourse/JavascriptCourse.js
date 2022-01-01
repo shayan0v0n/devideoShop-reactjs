@@ -1,9 +1,47 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './JavascriptCourse.scss';
 import { Container, Row, Col, Image } from 'react-bootstrap'
 import CoursesCard from '../../../components/coursesCard/CoursesCard';
+import { useDispatch, useSelector } from 'react-redux'
+import SpinnerLoading from '../../../components/spinnerLoading/SpinnerLoading'
+import { coursesAction } from '../../../actions/courses-action.js'
+import ErrorAlert from '../../../components/errorAlert/ErrorAlert';
 
 const JavascriptCourse = () => {
+    const dispatch = useDispatch()
+    const coursesData = useSelector(state => state.courseDatas)
+    useEffect(() => {
+        dispatch(coursesAction())
+    }, [dispatch])
+    
+    let jsCourseDOM = null;
+    if (coursesData.error) {
+        jsCourseDOM = (
+            <ErrorAlert>
+                لطفا فیلترشکن خود را روشن کنید...
+            </ErrorAlert>
+        )
+    }else if (coursesData.courses[0]) {
+        jsCourseDOM = (
+            coursesData.courses[0].map(item => (
+                <Col sm={12} md={4} xl={3}>
+                    <CoursesCard 
+                        cardTitle={item.cardTitle}
+                        cardText={item.cardText}
+                        cardPrice={item.cardPrice}
+                        cardSrc={`/assets/img/javascript-course-${item.cardID}.webp`} />
+                </Col>
+            ))
+        )
+    }else {
+        jsCourseDOM = (
+            <SpinnerLoading />
+        )
+    }
+
+    console.log(coursesData)
+
+
     return (
         <main>
             <section className="py-3 d-flex align-item-center section-one">
@@ -24,41 +62,7 @@ const JavascriptCourse = () => {
             <section className="py-3" dir="rtl">
                 <Container>
                     <Row className="g-3">
-                        <Col sm={12} md={3}>
-                            <CoursesCard
-                            cardPrice="125,000"
-                            cardSrc="/assets/img/javascript-course-1.webp"
-                            cardTitle="آموزش جاوااسکریپت"
-                            cardText="در دوره آموزش جاوااسکریپت (JavaScript) ما سعی داریم که جاوااسکریپت را به شکل کامل از سطح مقدماتی تا پیشرفته به شما آموزش دهیم." />
-                        </Col>
-                        <Col sm={12} md={3}>
-                            <CoursesCard
-                            cardPrice="145,000"
-                            cardSrc="/assets/img/javascript-course-2.webp"
-                            cardTitle="آموزش جاوا اسکریپت ES6"
-                            cardText="در آموزش جاوااسکریپت ES6 ما سعی داریم ویژگی‌های جدیدی که در جاوااسکریپت ECMAScript 6به جاوااسکریپت اضافه شده را به شما آموزش دهیم." />
-                        </Col>
-                        <Col sm={12} md={3}>
-                            <CoursesCard
-                            cardPrice="39,000"
-                            cardSrc="/assets/img/javascript-course-3.webp"
-                            cardTitle="آموزش جاوا اسکریپت ES7 و ES8"
-                            cardText="در طی دوره آموزش جاوا اسکریپت es۷ و es۸ ما سعی داریم در چند جلسه موارد جدید از ویژگی‌های که در این ورژن از ecma script معرفی شده را به شما آموزش دهیم." />
-                        </Col>
-                        <Col sm={12} md={3}>
-                            <CoursesCard
-                            cardPrice="159,000"
-                            cardSrc="/assets/img/javascript-course-4.webp"
-                            cardTitle="آموزش پروژه محور جاوااسکریپت"
-                            cardText="در دوره پروژه‌های جاوااسکریپت ما سعی کرده‌ایم جاوااسکریپت را در قالب پروژه‌های بزرگ و کوچک، ساده و پیشرفته به شما آموزش دهیم." />
-                        </Col>
-                        <Col sm={12} md={3}>
-                            <CoursesCard
-                            cardPrice="59,000"
-                            cardSrc="/assets/img/javascript-course-5.webp"
-                            cardTitle="Unit Test در جاوااسکریپت"
-                            cardText="در قالب این دوره آموزش تست نویسی در جاوا اسکریپت قصد داریم به شکل کامل و جامع روش نوشتن تست‌های مختلف برای پروژ‌های جاوا اسکریپت را به شما آموزش دهیم." />
-                        </Col>
+                        {jsCourseDOM}
                     </Row>
                 </Container>
             </section>

@@ -29,7 +29,9 @@ const BlogCards = () => {
         )
     }else if (blogDataList.error) {
         blogCardDOM = (
-            <ErrorAlert />
+            <ErrorAlert>
+                قطعی اینترنت، یک بار دیگر امتحان کنید...
+            </ErrorAlert>
         )
     }else {
         blogCardDOM = (

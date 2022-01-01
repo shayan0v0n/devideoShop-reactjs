@@ -1,5 +1,6 @@
 import React from 'react'
 import './Footer.scss'
+import { Link } from 'react-router-dom'
 import { Col, Row, Container } from 'react-bootstrap';
 
 const Footer = () => {
@@ -17,9 +18,10 @@ const Footer = () => {
                             <Col sm={12} md={3} className="m-2">
                                 <h4>بخش های سایت</h4>
                                 <hr />
-                                <a href="/">مقالات</a> <br />
-                                <a href="/">مدرسین</a> <br />
-                                <a href="/">درباره ما</a>
+                                <Link to="/">صفحه اصلی</Link><br />
+                                <Link to="/blog">مقالات</Link> <br />
+                                <Link to="/teachers">مدرسین</Link> <br />
+                                <Link to="/about">درباره ما</Link>
                             </Col>
 
                             <Col sm={12} md={3} className="m-2">
