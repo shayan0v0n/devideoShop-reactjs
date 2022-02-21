@@ -1,0 +1,16 @@
+.course-part {
+    background-color: white;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.video-link {
+    text-decoration: none;
+    color: black;
+        &:hover {
+            color: black;
+        }
+}

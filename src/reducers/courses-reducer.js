@@ -10,3 +10,16 @@ export const coursesReducer = (state = {courses: []}, action) => {
             return state
     }
 }
+
+export const detailCourseReduces = (state = {detailCourse: []}, action) => {
+    switch(action.type) {
+        case 'DETAILCOURSE_DATA_REQUEST':
+            return { loading: true, error: false, detailCourse: [] }
+        case 'DETAILCOURSE_DATA_ERROR':
+            return { loading: false, error: true, detailCourse: [] }
+        case 'DETAILCOURSE_DATA_SUCCESS':
+            return { loading: false, error: false, detailCourse: action.payload }
+        default: 
+            return state
+    }
+}

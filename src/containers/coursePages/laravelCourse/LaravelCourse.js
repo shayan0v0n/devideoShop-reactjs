@@ -6,14 +6,20 @@ import { useDispatch, useSelector } from 'react-redux'
 import { coursesAction } from '../../../actions/courses-action'
 import ErrorAlert from '../../../components/errorAlert/ErrorAlert';
 import SpinnerLoading from '../../../components/spinnerLoading/SpinnerLoading';
+import { useNavigate } from 'react-router-dom';
 
 const LaravelCourse = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const coursesData = useSelector(state => state.courseDatas)
     useEffect(() => {
         dispatch(coursesAction())
     }, [dispatch])
-    
+
+    const detailPathHandler = (cardPath) => {
+        navigate(`/skills/laravel/${cardPath}`);
+    }
+
     let laravelCourseDOM = null;
     if (coursesData.error) {
         laravelCourseDOM = (
@@ -24,12 +30,13 @@ const LaravelCourse = () => {
     }else if (coursesData.courses[3]) {
         laravelCourseDOM = (
             coursesData.courses[3].map(item => (
-                <Col sm={12} md={4} xl={3}>
-                    <CoursesCard 
+                <Col sm={12} md={4} xl={3} key={item.cardID}>
+                    <CoursesCard
+                        detailPath={() => {detailPathHandler(item.cardPath)}}
                         cardTitle={item.cardTitle}
                         cardText={item.cardText}
                         cardPrice={item.cardPrice}
-                        cardSrc={`/assets/img/laravel-course-${item.cardID}.webp`} />
+                        cardSrc={`/assets/img/${item.cardPath}.webp`} />
                 </Col>
             ))
         )

@@ -1,0 +1,13 @@
+@import '../../../../styles/variables';
+
+.boxInfo {
+    background-color: #fff;
+    color: $fourth_color;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px;
+    padding: 30px 15px;
+        img {
+            border-radius: 15px;
+        }
+}

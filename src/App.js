@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.scss'
 import { Route, Routes } from 'react-router';
 import Navigation from './components/navigation/Navigation'
 import Footer from './components/footer/Footer'
@@ -12,6 +11,7 @@ import PhpCourse from './containers/coursePages/phpCourse/PhpCourse';
 import LaravelCourse from './containers/coursePages/laravelCourse/LaravelCourse';
 import ReactjsCourse from './containers/coursePages/reactjsCourse/ReactjsCourse';
 import JavascriptCourse from './containers/coursePages/javascriptCourse/JavascriptCourse';
+import DetailCourse from './containers/detailCourse/DetailCourse';
 
 const App = () => {
     return (
@@ -27,6 +27,10 @@ const App = () => {
                 <Route path="/skills/laravel" element={<LaravelCourse />} />
                 <Route path="/skills/reactjs" element={<ReactjsCourse />} />
                 <Route path="/skills/javascript" element={<JavascriptCourse />} />
+                <Route path="/skills/javascript/:0" element={<DetailCourse />} />
+                <Route path="/skills/laravel/:3" element={<DetailCourse />} />
+                <Route path="/skills/reactjs/:1" element={<DetailCourse />} />
+                <Route path="/skills/php/:2" element={<DetailCourse />} />
             </Routes>
             <Footer />
         </div>

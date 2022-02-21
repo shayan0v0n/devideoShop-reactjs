@@ -3,9 +3,9 @@ import './CoursesCard.scss'
 import { Card } from 'react-bootstrap'
 
 const CoursesCard = props => {
-    const { cardSrc, cardTitle, cardText, cardPrice} = props
+    const { cardSrc, cardTitle, cardText, cardPrice, detailPath} = props
     return (
-        <Card dir="rtl">
+        <Card dir="rtl" onClick={detailPath} style={{cursor: "pointer"}}>
             <Card.Header>
                 <Card.Img src={cardSrc} />
             </Card.Header>

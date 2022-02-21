@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import { useNavigate } from 'react-router-dom'
 import './JavascriptCourse.scss';
 import { Container, Row, Col, Image } from 'react-bootstrap'
 import CoursesCard from '../../../components/coursesCard/CoursesCard';
@@ -9,10 +10,15 @@ import ErrorAlert from '../../../components/errorAlert/ErrorAlert';
 
 const JavascriptCourse = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const coursesData = useSelector(state => state.courseDatas)
     useEffect(() => {
         dispatch(coursesAction())
     }, [dispatch])
+
+    const detailPathHandler = (cardPath) => {
+        navigate(`/skills/javascript/${cardPath}`)
+    }
     
     let jsCourseDOM = null;
     if (coursesData.error) {
@@ -24,12 +30,13 @@ const JavascriptCourse = () => {
     }else if (coursesData.courses[0]) {
         jsCourseDOM = (
             coursesData.courses[0].map(item => (
-                <Col sm={12} md={4} xl={3}>
-                    <CoursesCard 
+                <Col sm={12} md={4} xl={3} key={item.cardID}>
+                    <CoursesCard
+                        detailPath={() => detailPathHandler(item.cardPath)}
                         cardTitle={item.cardTitle}
                         cardText={item.cardText}
                         cardPrice={item.cardPrice}
-                        cardSrc={`/assets/img/javascript-course-${item.cardID}.webp`} />
+                        cardSrc={`/assets/img/${item.cardPath}.webp`} />
                 </Col>
             ))
         )
@@ -38,9 +45,6 @@ const JavascriptCourse = () => {
             <SpinnerLoading />
         )
     }
-
-    console.log(coursesData)
-
 
     return (
         <main>

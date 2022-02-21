@@ -4,9 +4,6 @@
 }
 
 body {
-    font-family: 'vazir' !important;
-}
-
-i {
-    cursor: pointer;
+    font-family: "vazir" !important;
+    background: #eeeff1 !important;
 }

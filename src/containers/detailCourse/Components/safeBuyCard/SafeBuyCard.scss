@@ -1,0 +1,11 @@
+.safebuycard-style {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
+}
+
+.sticky-style {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top:7px !important;
+    z-index: 100;
+}

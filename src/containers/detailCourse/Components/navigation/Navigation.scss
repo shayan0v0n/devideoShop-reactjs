@@ -1,0 +1,20 @@
+.sticky-style {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top:7px !important;
+    z-index: 100;
+}
+
+.detail-course-navigation {
+    background-color: #fff;
+    padding: 1rem;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        .detail-course-navigation__items {
+            margin: 0 20px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+}

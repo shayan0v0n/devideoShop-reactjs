@@ -12,7 +12,6 @@ const BlogCards = () => {
     const navigate = useNavigate()
     const blogDataList = useSelector(state => state.blogData);
     const blogData = blogDataList.blogData.splice(0, 4);
-    console.log(blogData)
 
     useEffect(() => {
         dispatch(blogAction());

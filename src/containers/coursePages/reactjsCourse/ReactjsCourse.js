@@ -5,13 +5,19 @@ import { useDispatch, useSelector } from 'react-redux'
 import { coursesAction } from '../../../actions/courses-action'
 import ErrorAlert from '../../../components/errorAlert/ErrorAlert';
 import SpinnerLoading from '../../../components/spinnerLoading/SpinnerLoading';
+import { useNavigate } from 'react-router-dom';
 
 const ReactjsCourse = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const coursesData = useSelector(state => state.courseDatas)
     useEffect(() => {
         dispatch(coursesAction())
     }, [dispatch])
+
+    const detailPathHandler = (cardPath) => {
+        navigate(`/skills/reactjs/${cardPath}`);
+    }
     
     let reactjsCourseDOM = null;
     if (coursesData.error) {
@@ -23,12 +29,13 @@ const ReactjsCourse = () => {
     }else if (coursesData.courses[1]) {
         reactjsCourseDOM = (
             coursesData.courses[1].map(item => (
-                <Col sm={12} md={4} xl={3}>
-                    <CoursesCard 
+                <Col sm={12} md={4} xl={3} key={item.cardID}>
+                    <CoursesCard
+                        detailPath={() => {detailPathHandler(item.cardPath)}}
                         cardTitle={item.cardTitle}
                         cardText={item.cardText}
                         cardPrice={item.cardPrice}
-                        cardSrc={`/assets/img/reactjs-course-${item.cardID}.webp`} />
+                        cardSrc={`/assets/img/${item.cardPath}.webp`} />
                 </Col>
             ))
         )

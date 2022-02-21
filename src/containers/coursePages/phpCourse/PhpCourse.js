@@ -6,14 +6,20 @@ import { useDispatch, useSelector } from 'react-redux'
 import { coursesAction } from '../../../actions/courses-action'
 import ErrorAlert from '../../../components/errorAlert/ErrorAlert';
 import SpinnerLoading from '../../../components/spinnerLoading/SpinnerLoading';
+import { useNavigate } from 'react-router-dom';
 
 const PhpCourse = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const coursesData = useSelector(state => state.courseDatas)
     useEffect(() => {
         dispatch(coursesAction())
     }, [dispatch])
     
+    const detailPathHandler = (cardPath) => {
+        navigate(`/skills/php/${cardPath}`);
+    }
+
     let phpCourseDOM = null;
     if (coursesData.error) {
         phpCourseDOM = (
@@ -24,12 +30,13 @@ const PhpCourse = () => {
     }else if (coursesData.courses[2]) {
         phpCourseDOM = (
             coursesData.courses[2].map(item => (
-                <Col sm={12} md={4} xl={3}>
+                <Col sm={12} md={4} xl={3} key={item.cardID}>
                     <CoursesCard 
+                        detailPath={() => detailPathHandler(item.cardPath)}
                         cardTitle={item.cardTitle}
                         cardText={item.cardText}
                         cardPrice={item.cardPrice}
-                        cardSrc={`/assets/img/php-course-${item.cardID}.webp`} />
+                        cardSrc={`/assets/img/${item.cardPath}.webp`} />
                 </Col>
             ))
         )
