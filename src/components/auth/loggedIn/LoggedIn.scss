@@ -1,0 +1,8 @@
+.login-button {
+    text-decoration: none !important;
+    color: rgb(235, 235, 235) !important;
+    transition: .4s;
+        &:hover {
+            color: white !important;
+        }
+}

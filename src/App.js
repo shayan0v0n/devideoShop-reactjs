@@ -12,6 +12,7 @@ import LaravelCourse from './containers/coursePages/laravelCourse/LaravelCourse'
 import ReactjsCourse from './containers/coursePages/reactjsCourse/ReactjsCourse';
 import JavascriptCourse from './containers/coursePages/javascriptCourse/JavascriptCourse';
 import DetailCourse from './containers/detailCourse/DetailCourse';
+import Dashboard from './containers/dashboard/Dashboard'
 
 const App = () => {
     return (
@@ -31,6 +32,7 @@ const App = () => {
                 <Route path="/skills/laravel/:3" element={<DetailCourse />} />
                 <Route path="/skills/reactjs/:1" element={<DetailCourse />} />
                 <Route path="/skills/php/:2" element={<DetailCourse />} />
+                <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
             <Footer />
         </div>
