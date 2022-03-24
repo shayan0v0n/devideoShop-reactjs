@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router';
-import Navigation from './components/navigation/Navigation'
-import Footer from './components/footer/Footer'
+import Navigation from './containers/navigation/Navigation'
+import Footer from './containers/footer/Footer'
 import Home from './containers/home/Home';
 import About from './containers/about/About'
 import Blog from './containers/blog/Blog'

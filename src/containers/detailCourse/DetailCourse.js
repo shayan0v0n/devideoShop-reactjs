@@ -3,8 +3,8 @@ import './DetailCourse.scss';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { detailCourseAction } from '../../actions/courses-action';
-import SpinnerLoading from '../../components/spinnerLoading/SpinnerLoading';
-import ErrorAlert from '../../components/errorAlert/ErrorAlert';
+import SpinnerLoading from '../../components/shareComponents/spinnerLoading/SpinnerLoading';
+import ErrorAlert from '../../components/shareComponents/errorAlert/ErrorAlert';
 import DetailCourseContainer from './container/DetailCourseContainer'
 
 const DetailCourse = () => {

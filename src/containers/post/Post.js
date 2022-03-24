@@ -4,8 +4,8 @@ import './Post.scss'
 import { Card, Container } from 'react-bootstrap'
 import { singlePostAction } from '../../actions/blog-action'
 import { useDispatch, useSelector } from 'react-redux'
-import SpinnerLoading from '../../components/spinnerLoading/SpinnerLoading'
-import ErrorAlert from '../../components/errorAlert/ErrorAlert'
+import SpinnerLoading from '../../components/shareComponents/spinnerLoading/SpinnerLoading'
+import ErrorAlert from '../../components/shareComponents/errorAlert/ErrorAlert'
 
 const Post = () => {
     const dispatch = useDispatch();

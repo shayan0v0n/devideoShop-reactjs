@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react'
 import './Blog.scss'
 import { Row, Col, Container } from 'react-bootstrap'
-import Post from './post/Post'
 import { useDispatch, useSelector } from 'react-redux'
 import { blogAction } from '../../actions/blog-action'
-import SpinnerLoading from '../../components/spinnerLoading/SpinnerLoading'
-import ErrorAlert from '../../components/errorAlert/ErrorAlert'
 import { useNavigate } from 'react-router-dom'
+import Post from '../../components/blog/post/Post'
+import SpinnerLoading from '../../components/shareComponents/spinnerLoading/SpinnerLoading'
+import ErrorAlert from '../../components/shareComponents/errorAlert/ErrorAlert'
 
 const Blog = () => {
     const dispatch = useDispatch();

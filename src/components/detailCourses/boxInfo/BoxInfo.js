@@ -4,27 +4,31 @@ import { Col, Row, Container, Button, Image } from 'react-bootstrap'
 
 const BoxInfo = props => {
   const { detailCourseData } = props;
-  const prevLocalStorage = localStorage.getItem("userInfo")
+  let prevLocalStorage = localStorage.getItem("userInfo");
   const [prevUserInfoStorage, setPrevUserInfoStorage] = useState(JSON.parse(prevLocalStorage));
   const [existValidate, setExistValidate] = useState(true);
 
   const addProducts = () => {
       let prevUserInfoData = {...prevUserInfoStorage};
-      if (prevUserInfoData) {
+      if (prevUserInfoStorage) {
         const changeUserInfoData = [...prevUserInfoStorage.cart, detailCourseData];
         prevUserInfoData["cart"] = changeUserInfoData;
         setPrevUserInfoStorage(prevUserInfoData);
         localStorage.setItem("userInfo", JSON.stringify(prevUserInfoData));
+      }else {
+        alert("برای خرید، اول ثبت نام کنید")
       }
   }
 
   useEffect(() => {
-    const checkUserExist = prevUserInfoStorage.cart.findIndex(item => {
-      return item.cardTitle === detailCourseData.cardTitle
-    })
-
-    if (checkUserExist === -1) setExistValidate(true)
-    else setExistValidate(false);
+    if (prevUserInfoStorage) {
+      const checkUserExist = prevUserInfoStorage.cart.findIndex(item => {
+        return item.cardTitle === detailCourseData.cardTitle
+      })
+  
+      if (checkUserExist === -1) setExistValidate(true)
+      else setExistValidate(false);
+    }
   }, [addProducts])
 
   return (

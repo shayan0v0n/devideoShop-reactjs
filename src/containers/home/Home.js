@@ -2,7 +2,7 @@ import React from 'react'
 import './ContainerHome.scss'
 import { Col, Row, Image, Container } from 'react-bootstrap'
 import CourseCards from '../../components/courseCard/CourseCards'
-import BlogCards from '../../components/blogCards/BlogCards'
+import BlogCards from '../../components/blogCards/blogCard/BlogCard'
 import PersonalCards from '../../components/personalCards/PersonalCards'
 
 const Home = () => {

@@ -4,8 +4,8 @@ import { Container, Row, Col, Image } from 'react-bootstrap'
 import CoursesCard from '../../../components/coursesCard/CoursesCard';
 import { useDispatch, useSelector } from 'react-redux'
 import { coursesAction } from '../../../actions/courses-action'
-import ErrorAlert from '../../../components/errorAlert/ErrorAlert';
-import SpinnerLoading from '../../../components/spinnerLoading/SpinnerLoading';
+import ErrorAlert from '../../../components/shareComponents/errorAlert/ErrorAlert';
+import SpinnerLoading from '../../../components/shareComponents/spinnerLoading/SpinnerLoading';
 import { useNavigate } from 'react-router-dom';
 
 const LaravelCourse = () => {

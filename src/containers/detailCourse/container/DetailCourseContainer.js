@@ -1,13 +1,13 @@
 import React from 'react';
-import BoxInfo from '../Components/boxInfo/BoxInfo'
-import Navigation from '../Components/navigation/Navigation'
-import MoreQuestion from '../Components/moreQuestion/MoreQuestion'
-import CourseParts from '../Components/courseParts/CourseParts'
-import { Container, Row, Col } from 'react-bootstrap'
 import './DetailCourseContainer.scss';
-import Description from '../Components/description/Description';
-import TeacherPlace from '../Components/teacherPlace/TeacherPlace';
-import SafeBuyCard from '../Components/safeBuyCard/SafeBuyCard';
+import { Container, Row, Col } from 'react-bootstrap'
+import BoxInfo from '../../../components/detailCourses/boxInfo/BoxInfo'
+import Navigation from '../../../components/detailCourses/navigation/Navigation'
+import MoreQuestion from '../../../components/detailCourses/moreQuestion/MoreQuestion'
+import CourseParts from '../../../components/detailCourses/courseParts/CourseParts'
+import Description from '../../../components/detailCourses/description/Description';
+import TeacherPlace from '../../../components/detailCourses/teacherPlace/TeacherPlace';
+import SafeBuyCard from '../../../components/detailCourses/safeBuyCard/SafeBuyCard';
 
 const DetailCourseContainer = (props) => {
     const { detailCourse, keyParams } = props

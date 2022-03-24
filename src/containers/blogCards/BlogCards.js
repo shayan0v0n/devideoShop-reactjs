@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
-import SpinnerLoading from '../../components/spinnerLoading/SpinnerLoading'
-import BlogCard from './blogCard/BlogCard'
+import SpinnerLoading from '../../components/shareComponents/spinnerLoading/SpinnerLoading'
+import BlogCard from '../../components/blogCards/blogCard/BlogCard'
 import { blogAction } from '../../actions/blog-action'
 import { useDispatch, useSelector } from 'react-redux'
-import ErrorAlert from '../../components/errorAlert/ErrorAlert'
+import ErrorAlert from '../../components/shareComponents/errorAlert/ErrorAlert'
 import { useNavigate } from 'react-router-dom'
 
 const BlogCards = () => {

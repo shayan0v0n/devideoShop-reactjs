@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import './Navigation.scss'
-import { LinkContainer } from 'react-router-bootstrap'
 import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap'
-import LoggedIn from '../auth/loggedIn/LoggedIn'
-import NotLogin from '../auth/notLogin/NotLogin'
-import { authAction } from '../../actions/auth-action'
 import { useDispatch, useSelector } from 'react-redux'
+import { LinkContainer } from 'react-router-bootstrap'
+import { authAction } from '../../actions/auth-action'
+import LoggedIn from '../../components/navigation/auth/loggedIn/LoggedIn'
+import NotLogin from '../../components/navigation/auth/notLogin/NotLogin'
 
 
 const Navigation = () => {

@@ -4,9 +4,9 @@ import './JavascriptCourse.scss';
 import { Container, Row, Col, Image } from 'react-bootstrap'
 import CoursesCard from '../../../components/coursesCard/CoursesCard';
 import { useDispatch, useSelector } from 'react-redux'
-import SpinnerLoading from '../../../components/spinnerLoading/SpinnerLoading'
+import SpinnerLoading from '../../../components/shareComponents/spinnerLoading/SpinnerLoading'
 import { coursesAction } from '../../../actions/courses-action.js'
-import ErrorAlert from '../../../components/errorAlert/ErrorAlert';
+import ErrorAlert from '../../../components/shareComponents/errorAlert/ErrorAlert';
 
 const JavascriptCourse = () => {
     const dispatch = useDispatch()
