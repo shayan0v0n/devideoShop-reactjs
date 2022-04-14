@@ -2,7 +2,7 @@ import React from 'react'
 import './ContainerHome.scss'
 import { Col, Row, Image, Container } from 'react-bootstrap'
 import CourseCards from '../../components/courseCard/CourseCards'
-import BlogCards from '../../components/blogCards/blogCard/BlogCard'
+import BlogCards from '../../containers/blogCards/BlogCards'
 import PersonalCards from '../../components/personalCards/PersonalCards'
 
 const Home = () => {
@@ -26,6 +26,7 @@ const Home = () => {
             <section>
                 <Container>
                     <Row className="py-5 g-2">
+                        <h2 className="text-center">...دوره های آموزشی...</h2>
                         <Col sm={12} md={6} xl={3}>
                             <CourseCards
                              classNameType="even-card-number"
@@ -73,6 +74,7 @@ const Home = () => {
                 </Container>
             </section>
             <section className="py-5">
+                <h2 className="text-center">...آخرین مقالات...</h2>
                 <BlogCards />
             </section>
             <section className="py-5 d-flex align-item-center section-one">
@@ -91,6 +93,7 @@ const Home = () => {
                 </Container>
             </section>
             <section className="py-5">
+                <h2 className="text-center">...مدرسین دویدئو...</h2>
                 <PersonalCards />
             </section>
             <section className="py-5 d-flex align-item-center section-two">

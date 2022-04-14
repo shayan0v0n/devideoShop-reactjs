@@ -93,9 +93,7 @@ const Register = props => {
         dir="rtl"
       >
           <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter" className="text-center">
-
-            </Modal.Title>
+            <Modal.Title id="contained-modal-title-vcenter" className="text-center"></Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>

@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import './NotLogin.scss';
 import Register from './register/Register';
 import Login from './login/Login';
 
+
 const NotLogin = props => {
-    const [loginModal, setLoginModal] = useState(false);
+    const [loginModal, setLoginModal] = useState(false); // is off
     const [registerModal, setRegisterModal] = useState(false);
 
     return (
@@ -18,7 +19,10 @@ const NotLogin = props => {
                  overlay={<Tooltip>نکته: داده های شما به صورت کوکی ذخیره خواهد شد</Tooltip>}>
                 <span onClick={() => setRegisterModal(true)}>ثبت نام</span>
                     </OverlayTrigger></span>
-            <Register userLoggedInHandler={props.userLoggedIn} show={registerModal} onHide={() => setRegisterModal(false)} />
+            <Register
+             userLoggedInHandler={props.userLoggedIn}
+             show={registerModal}
+             onHide={() => setRegisterModal(false)}/>
             {/* <Login show={loginModal} onHide={() => setLoginModal(false)} /> */}
         </>
     )
