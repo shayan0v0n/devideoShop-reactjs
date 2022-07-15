@@ -1,6 +1,6 @@
 import React from 'react'
-import './BlogCard.scss'
 import {Card} from 'react-bootstrap'
+import './blogCard.scss'
 
 const BlogCard = (props) => {
     const { cardTitle, cardBody, blogDetail } = props

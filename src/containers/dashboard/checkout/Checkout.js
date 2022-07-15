@@ -60,12 +60,24 @@ const Checkout = props => {
             )
         }else {
             checkoutDOM = (
-                <h3>سبد خرید خالی می باشد</h3>
+                <div className="text-center">
+                    <div className='mt-5'>
+                        <h3>هیچ دوره ای در سبد خرید نیست</h3>
+                        <hr />
+                        <span>لطفا برای خرید محصول وارد قسمت فروشگاه شوید و محصول را به سبد خرید اضافه کنید</span>
+                    </div>
+                </div>
             )
         }
     }else {
         checkoutDOM = (
-            <h3>سبد خرید خالی می باشد</h3>
+            <div className="text-center">
+                <div className='mt-5'>
+                    <h3>هیچ دوره ای در سبد خرید نیست</h3>
+                    <hr />
+                    <span>لطفا برای خرید محصول وارد قسمت فروشگاه شوید و محصول را به سبد خرید اضافه کنید</span>
+                </div>
+            </div>
         )
     }
 

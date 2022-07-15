@@ -19,12 +19,24 @@ const Courses = props => {
             )
         }else {
             courseDOM = (
-                <h3>هیچ دوره ای وجود ندارد</h3>
+                <div className="text-center">
+                    <div className='mt-5'>
+                        <h3>هیچ دوره ای خریداری نشده</h3>
+                        <hr />
+                        <span>لطفا برای خرید محصول وارد قسمت فروشگاه شوید و محصول را به سبد خرید اضافه کنید</span>
+                    </div>
+                </div>
             )
         }
     }else {
         courseDOM = (
-            <h3>هیچ دوره ای وجود ندارد</h3>
+            <div className="text-center">
+                <div className='mt-5'>
+                    <h3>هیچ دوره ای خریداری نشده</h3>
+                    <hr />
+                    <span>لطفا برای خرید محصول وارد قسمت فروشگاه شوید و محصول را به سبد خرید اضافه کنید</span>
+                </div>
+            </div>
         )
     }
 

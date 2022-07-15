@@ -3,6 +3,8 @@ import './Dashboard.scss';
 import { Col, Row, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import ExitModal from './exitModal/ExitModal';
 import Courses from './courses/Courses'
 import UserInfo from './userInfo/UserInfo'
 import Checkout from './checkout/Checkout'
@@ -10,12 +12,13 @@ import Checkout from './checkout/Checkout'
 const Dashboard = props => {
     const isAuthHandler = useSelector(state => state.isAuth);
     const [ dashboardState, setDashboardState ] = useState("checkout")
+    const [ exitModal, setExitModal ] = useState(false);
+    const [ exitRes, setExitRes ] = useState(false);
+    const navigate = useNavigate()
+    const setExitModalHandler = modalStatus => setExitModal(modalStatus)
 
-    const signoutHandler = () => {
-        localStorage.clear();
-        isAuthHandler.login();
-    }
-
+    const signoutHandler = () => setExitModal(true)
+    
     let dashboardDOM = null;
     if (dashboardState === "courses") {
         dashboardDOM = (
@@ -30,9 +33,16 @@ const Dashboard = props => {
             <UserInfo />
         )
     }
+    
+    if (exitRes) {
+        localStorage.clear();
+        isAuthHandler.login();
+        navigate('/')
+    }
 
     return (
         <Container fluid dir="rtl">
+            <ExitModal show={exitModal} handleClose={setExitModalHandler} setExitResHandler={setExitRes} />
             <Row>
                 <Col xl="2" className=" border border-danger d-flex align-content-center">
                     <div className="p-2 flex-column align-items-center m-auto">
@@ -40,7 +50,7 @@ const Dashboard = props => {
                         <span className="d-block my-3 dashboard-control " onClick={() => setDashboardState("checkout")}><i className="fa fa-shopping-cart"></i> سبد خرید</span>
                         <span className="d-block my-3 dashboard-control " onClick={() => setDashboardState("courses")}><i className="fa fa-video-camera"></i> دوره آموزشی</span>
                         <span className="d-block my-3 dashboard-control " onClick={() => setDashboardState("userinfo")}><i className="fa fa-user"></i> اطلاعات حساب کاربری</span>
-                        <Link to="/" className="dashboard-control-container "><span className="d-block my-3 dashboard-control" onClick={signoutHandler}><i className="fa fa-sign-out"></i> خروج</span></Link>
+                        <span className="d-block my-3 dashboard-control" onClick={signoutHandler}><i className="fa fa-sign-out"></i> خروج</span>
                     </div>
                </Col>
                 <Col xl="10" className=" border border-warning">

@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap'
 const CoursesCard = props => {
     const { cardSrc, cardTitle, cardText, cardPrice, detailPath} = props
     return (
-        <Card dir="rtl" onClick={detailPath} style={{cursor: "pointer"}}>
+        <Card dir="rtl" onClick={detailPath} style={{cursor: "pointer"}} className="animate__animated animate__fadeIn">
             <Card.Header>
                 <Card.Img src={cardSrc} />
             </Card.Header>
